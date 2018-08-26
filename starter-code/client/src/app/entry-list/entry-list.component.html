@@ -1,0 +1,8 @@
+<h1> Entries list </h1>
+  <div *ngFor="let entry of entries">
+    <h3> {{ entry.title }} </h3>
+    <small>{{ entry.date}}</small>
+    <a [routerLink]="['/entry',entry._id ]"> View Details </a>
+  </div>
+
+  <app-entry-form></app-entry-form>

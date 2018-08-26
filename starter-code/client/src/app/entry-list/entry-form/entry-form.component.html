@@ -1,0 +1,31 @@
+<h3>New Entry</h3>
+<form (ngSubmit)="submitForm(myForm)" #myForm="ngForm">
+    <label>Title</label>
+    <input
+        type='text'
+        name="title"
+        [(ngModel)]="title"
+        #Title="ngModel"
+        required="required">
+
+        <div *ngIf="Title.errors && (Title.dirty || Title.touched)">
+            <p class="error" [hidden]="!Title.errors.required">
+                Title is required
+            </p>
+        </div>
+
+        <label>Content</label>
+        <textarea
+            name="content"
+            [(ngModel)]="content"
+            #Content="ngModel"
+            required="required"></textarea>
+
+        <div *ngIf="Content.errors && (Content.dirty || Content.touched)">
+            <p class="error" [hidden]="!Content.errors.required">
+                Content for this Journal is required
+            </p>
+        </div>
+
+        <button type="submit">Submit</button>
+    </form>

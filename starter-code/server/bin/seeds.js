@@ -45,8 +45,9 @@ const entries = [
   }
 ];
 
-JournalEntry.create(entries, (err, entries) => {
-  if (err){ throw(err) }
-  console.log("Success", entries);
+JournalEntry.create( entries, ( err, entries ) =>
+{
+  if ( err ) { throw ( err ); }
+  console.log( "Success", entries );
   mongoose.connection.close();
-})
+} );
